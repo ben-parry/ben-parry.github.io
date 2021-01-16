@@ -1,0 +1,27 @@
+body {
+  background-color: #f2f0e6;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #cc7722;
+}
+
+.primary-text {
+  font-size: 1.2em;
+}
+
+.navigation {
+  font-size: 1.2em;
+}
+
+.lead {
+  font-size: 1.25em;
+}
+
+.bullet-list {
+  list-style-type: circle;
+}
