@@ -9,6 +9,7 @@ ul {
 a {
   color: #c8102e;
   display: inline;
+  text-decoration: none;
 }
 
 .primary-text {
