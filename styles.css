@@ -8,6 +8,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: bold;
+}
+
 .menu {
   margin: 20px;
   width: 300px;
