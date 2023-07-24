@@ -23,6 +23,12 @@ a:hover {
   font-family: Lato, Helvetica, sans-serif;
 }
 
+.content mark {
+  background: #d8d8d8;
+  padding: 1px 3px;
+  border-radius: 3px;
+}
+
 .title {
   font-size: 22px;
   font-weight: 100;
