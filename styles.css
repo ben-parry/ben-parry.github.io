@@ -13,6 +13,19 @@ a:hover {
   text-decoration: bold;
 }
 
+.headshot-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.headshot {
+  width: 150px; /* You can adjust the size as needed */
+  height: 150px;
+  border-radius: 50%; /* This crops the image to a circle */
+}
+
 .content {
   width: 90%;
   max-width: 700px;
