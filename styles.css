@@ -1,11 +1,11 @@
 body {
-  background-color: #f2f0e6;
+  background-color: #FFFCF0; /* use the Flexoki theme colours. Gorgeous. https://stephango.com/flexoki */
   display: block;
   list-style: none;
 }
 
 a {
-  color: #cc7722;
+  color: #DA702C;
   text-decoration: none;
 }
 
@@ -34,6 +34,7 @@ a:hover {
   font-size: 18px;
   font-weight: 300;
   font-family: Lato, Helvetica, sans-serif;
+  color: #100F0F;
 }
 
 .content mark {
