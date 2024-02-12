@@ -1,12 +1,13 @@
 body {
-  background-color: #FFFCF0; /* use the Flexoki theme colours. Gorgeous. https://stephango.com/flexoki */
+  background-color: #FFFAF3; /* use the Flexoki theme colours. Gorgeous. https://stephango.com/flexoki */
   display: block;
   list-style: none;
 }
 
 a {
-  color: #DA702C;
+  color: #CD5C67;
   text-decoration: none;
+  font-family: Outfit, Helvetica, sans-serif;
 }
 
 a:hover {
@@ -17,7 +18,7 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  margin: 10px;
 }
 
 .headshot {
@@ -27,14 +28,16 @@ a:hover {
 }
 
 .content {
-  width: 92%;
+  width: 80%;
   max-width: 700px;
   margin: 20px;
+  margin-left: 60px;
   float: left;
   font-size: 18px;
-  font-weight: 300;
-  font-family: Lato, Helvetica, sans-serif;
-  color: #100F0F;
+  font-family: "PT Serif", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #322d2e;
 }
 
 .content mark {
@@ -45,9 +48,10 @@ a:hover {
 
 .title {
   font-size: 22px;
-  font-weight: 100;
-  font-style: Lato;
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
 }
 
 #menu {
@@ -55,7 +59,10 @@ a:hover {
   width: 200px;
   float: right;
   font-size: 16px;
-  font-family: Lato, Helvetica, sans-serif;
+  font-family: "Outfit", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
   list-style-type: none;
   list-style: none; 
 }
