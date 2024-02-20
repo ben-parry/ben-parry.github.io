@@ -1,5 +1,8 @@
+/* Fonts */
+@font-face { font-family: "Outfit"; src: url("https://benparry.ca/templates/fonts/outfit.ttf") format("truetype");}
+
 body {
-  background-color: #FFFAF3; /* use the Flexoki theme colours. Gorgeous. https://stephango.com/flexoki */
+  background-color: #FFFAF3; 
   display: block;
   list-style: none;
 }
