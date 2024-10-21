@@ -58,9 +58,15 @@ body {
     margin-bottom: 10px;
 }
 
+#menu a {
+    font-style: normal;
+}
+
 a {
     color: #294635;
     text-decoration: none;
+    font-weight: 400;
+    font-style: italic;
 }
 
 a:hover {

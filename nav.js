@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li><a href="https://philosophyofprogress.com/">Progress Seminar</a></li>
                 <li><a href="https://skillfulnotes.com/">Skillful Notes</a></li>
                 <li><a href="https://benparry.substack.com//">Blog</a></li>
-                <li><a href="https://twitter.com/Via_Benjamin">X (Twitter)</a></li>
+                <li><a href="https://twitter.com/_benjaminparry">X (Twitter)</a></li>
             </ul>
         </nav>
     `;
