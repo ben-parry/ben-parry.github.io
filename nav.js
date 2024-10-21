@@ -3,10 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
         <nav>
             <ul>
                 <li><a href="https://www.benparry.ca">Home</a></li>
+                <li><a href="https://benparry.substack.com//">Blog</a></li>
                 <li><a href="https://www.benparry.ca/complexity-notebooks">Complexity Notebooks</a></li>
                 <li><a href="https://philosophyofprogress.com/">Progress Seminar</a></li>
                 <li><a href="https://skillfulnotes.com/">Skillful Notes</a></li>
-                <li><a href="https://benparry.substack.com//">Blog</a></li>
                 <li><a href="https://twitter.com/_benjaminparry">X (Twitter)</a></li>
             </ul>
         </nav>
