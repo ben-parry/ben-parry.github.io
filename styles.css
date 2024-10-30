@@ -2,6 +2,10 @@
 @font-face { font-family: "Outfit"; src: url("https://benparry.ca/templates/fonts/outfit.ttf") format("truetype"); }
 @font-face { font-family: "PT Serif"; src: url("https://benparry.ca/templates/fonts/pt-serif.ttf") format("truetype"); }
 
+h2 {
+    font-family: "Outfit", sans-serif;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -62,6 +66,10 @@ body {
     font-style: normal;
 }
 
+#lists a {
+    font-style: normal;
+}
+
 a {
     color: #294635;
     text-decoration: none;
@@ -80,6 +88,7 @@ a:hover {
     display: block;
     margin: 0 auto;
 }
+
 
 /* Highlight styles */
 .content mark {
