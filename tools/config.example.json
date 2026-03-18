@@ -1,0 +1,11 @@
+{
+    "x": {
+        "apiKey": "YOUR_X_API_KEY",
+        "apiKeySecret": "YOUR_X_API_KEY_SECRET",
+        "accessToken": "YOUR_X_ACCESS_TOKEN",
+        "accessTokenSecret": "YOUR_X_ACCESS_TOKEN_SECRET"
+    },
+    "github": {
+        "token": "YOUR_GITHUB_PERSONAL_ACCESS_TOKEN"
+    }
+}
