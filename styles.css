@@ -1,7 +1,7 @@
 /* benparry.ca
    One ratio governs the page: 2:3.
    u = measure / 9 (Van de Graaf canon). Top margin 1.5u, bottom 3u (1:2),
-   headshot 3u wide by 4.5u tall (2:3), plate mark u/12, indent u/2.
+   headshot 3u wide by 4.5u tall (2:3), paragraph gap one line.
    Fonts live in fonts.css, embedded so text never flashes. */
 
 
@@ -18,9 +18,9 @@ body{margin:0;background:var(--paper);color:var(--ink);
 main,.page{width:min(var(--measure),100% - var(--u));margin:0 auto;padding:calc(var(--u)*1.5) 0 calc(var(--u)*3)}
 ::selection{background:rgba(164,42,30,.16)}
 
-/* Book paragraphs: no gap, indented after the first */
+/* Paragraphs: flush left, one blank line between */
 p{margin:0}
-p+p{text-indent:calc(var(--u)/2)}
+p+p{margin-top:1.55em}
 .flush{text-indent:0!important}
 
 /* Links: semibold rubric, light underline, no hover change */
@@ -34,19 +34,17 @@ a.quiet:hover{text-decoration:underline;text-decoration-thickness:1px;text-decor
 .sc{text-transform:uppercase;font-size:.8em;letter-spacing:.06em;font-weight:500}
 a .sc{font-weight:500;letter-spacing:.05em}
 a:has(.sc){text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:rgba(164,42,30,.45)}
-.motto{text-align:center;text-indent:0!important;margin:.5em 0}
-.motto+p{text-indent:0}
 
 /* Headshot, set like a frontispiece with an engraver's plate mark */
 .portrait{display:block;width:calc(var(--u)*3);height:auto;aspect-ratio:2/3;
-  padding:calc(var(--u)/12);border:1px solid rgba(43,37,34,.3);margin:0 0 1.55em;background:var(--paper)}
+  margin:0 0 1.55em}
 
 /* Flags */
 .flag{display:inline-block;line-height:0;width:1.05em;height:.7em;vertical-align:-.04em;margin:0 .05em}
 
-/* Chinese: Song face, two-character indent */
+/* Chinese: Song face */
 [lang="zh-Hans"]{font-family:"Noto Serif SC",serif;font-weight:400}
-p[lang="zh-Hans"]{font-size:.9em;line-height:calc(1.55em/.9);text-indent:2em;letter-spacing:.02em}
+p[lang="zh-Hans"]{font-size:.9em;line-height:calc(1.55em/.9);letter-spacing:.02em}
 span[lang="zh-Hans"]{font-size:.92em;line-height:1}
 
 /* Manicule back home */
@@ -55,7 +53,7 @@ span[lang="zh-Hans"]{font-size:.92em;line-height:1}
 
 /* Footer and colophon */
 footer{margin-top:calc(var(--u)*1.5);color:var(--muted);font-size:.8em;line-height:1.6}
-footer p+p{text-indent:0}
+footer p+p{margin-top:0}
 footer .sc{letter-spacing:.12em}
 
 /* Lists and marks on sub-pages */
@@ -73,7 +71,7 @@ figure{margin:1.55em 0}
 figure img{display:block;max-width:100%;height:auto;mix-blend-mode:multiply}
 
 .quote{text-indent:0}
-.quote+p{text-indent:0;color:var(--muted);margin-top:.5em}
+.quote+p{color:var(--muted);margin-top:.5em}
 
 @media (max-width:600px){
   html{font-size:17.5px}
@@ -88,7 +86,7 @@ figure img{display:block;max-width:100%;height:auto;mix-blend-mode:multiply}
   main,.page{width:auto;padding:0}
   :root{--u:.6in}
   a{color:#000;text-decoration-color:#999}
-  .portrait{width:1.4in;border-color:#999}
+  .portrait{width:1.4in}
   footer{margin-top:.3in}
   pre{white-space:pre-wrap;font-size:8pt}
 }
