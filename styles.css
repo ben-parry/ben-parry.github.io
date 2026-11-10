@@ -1,7 +1,7 @@
 /* benparry.ca
    One ratio governs the page: 2:3.
    u = measure / 9 (Van de Graaf canon). Top margin 1.5u, bottom 3u (1:2),
-   headshot 2.5u wide by 3.75u tall (2:3), paragraph gap one line.
+   headshot 2u wide by 3u tall (2:3), paragraph gap one line.
    Fonts live in fonts.css, embedded so text never flashes. */
 
 
@@ -35,7 +35,7 @@ a.quiet:hover{text-decoration:underline;text-decoration-thickness:1px;text-decor
 a.society{font-weight:520}
 
 /* Headshot, set like a frontispiece with an engraver's plate mark */
-.portrait{display:block;width:calc(var(--u)*2.5);height:auto;aspect-ratio:2/3;
+.portrait{display:block;width:calc(var(--u)*2);height:auto;aspect-ratio:2/3;
   margin:0 0 1.55em}
 
 /* Flags */
