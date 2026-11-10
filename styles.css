@@ -32,6 +32,7 @@ a.quiet:hover{text-decoration:underline;text-decoration-thickness:1px;text-decor
 
 /* True small caps from Literata */
 .sc{font-variant-caps:small-caps;letter-spacing:.03em}
+a.society{font-weight:520}
 
 /* Headshot, set like a frontispiece with an engraver's plate mark */
 .portrait{display:block;width:calc(var(--u)*3);height:auto;aspect-ratio:2/3;
