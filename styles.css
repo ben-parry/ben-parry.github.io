@@ -10,9 +10,9 @@
   --measure:30em; --u:calc(var(--measure)/9);
 }
 *{box-sizing:border-box}
-html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--paper)}
+html{font-size:17.5px;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--paper)}
 body{margin:0;background:var(--paper);color:var(--ink);
-  font:430 1rem/1.55 "Newsreader","Noto Serif SC",Georgia,serif;
+  font:400 1rem/1.55 "Literata","Noto Serif SC",Georgia,serif;font-variant-numeric:oldstyle-nums proportional-nums;
   font-optical-sizing:auto;font-kerning:normal;font-synthesis:none;
   text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;hanging-punctuation:first}
 main,.page{width:min(var(--measure),100% - var(--u));margin:0 auto;padding:calc(var(--u)*1.5) 0 calc(var(--u)*3)}
@@ -30,10 +30,8 @@ a:focus-visible{outline:1px dotted currentColor;outline-offset:2px}
 a.quiet{color:inherit;font-weight:inherit;text-decoration:none}
 a.quiet:hover{text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(43,37,34,.35)}
 
-/* Small caps drawn from capitals: Newsreader has no true small caps */
-.sc{text-transform:uppercase;font-size:.8em;letter-spacing:.06em;font-weight:500}
-a .sc{font-weight:500;letter-spacing:.05em}
-a:has(.sc){text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:rgba(164,42,30,.45)}
+/* True small caps from Literata */
+.sc{font-variant-caps:small-caps;letter-spacing:.03em}
 
 /* Headshot, set like a frontispiece with an engraver's plate mark */
 .portrait{display:block;width:calc(var(--u)*3);height:auto;aspect-ratio:2/3;
@@ -44,8 +42,8 @@ a:has(.sc){text-decoration-thickness:1px;text-underline-offset:.16em;text-decora
 
 /* Chinese: Song face */
 [lang="zh-Hans"]{font-family:"Noto Serif SC",serif;font-weight:400}
-p[lang="zh-Hans"]{font-size:.9em;line-height:calc(1.55em/.9);letter-spacing:.02em}
-span[lang="zh-Hans"]{font-size:.92em;line-height:1}
+p[lang="zh-Hans"]{font-size:.95em;line-height:calc(1.55em/.95);letter-spacing:.02em}
+span[lang="zh-Hans"]{font-size:.97em;line-height:1}
 
 /* Manicule back home */
 .home{display:inline-block;color:var(--muted);margin-bottom:1.55em;line-height:0}
@@ -54,7 +52,7 @@ span[lang="zh-Hans"]{font-size:.92em;line-height:1}
 /* Footer and colophon */
 footer{margin-top:calc(var(--u)*1.5);color:var(--muted);font-size:.8em;line-height:1.6}
 footer p+p{margin-top:0}
-footer .sc{letter-spacing:.12em}
+footer .sc{font-variant-caps:all-small-caps;letter-spacing:.1em}
 
 /* Lists and marks on sub-pages */
 ul{margin:.775em 0;padding-left:calc(var(--u)/2)}
@@ -74,7 +72,7 @@ figure img{display:block;max-width:100%;height:auto;mix-blend-mode:multiply}
 .quote+p{color:var(--muted);margin-top:.5em}
 
 @media (max-width:600px){
-  html{font-size:17.5px}
+  html{font-size:16.5px}
   :root{--u:calc(min(var(--measure),100vw)/9)}
   main,.page{width:calc(100% - var(--u));padding-top:var(--u)}
 }
