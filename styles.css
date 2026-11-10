@@ -1,7 +1,7 @@
 /* benparry.ca
    One ratio governs the page: 2:3.
    u = measure / 9 (Van de Graaf canon). Top margin 1.5u, bottom 3u (1:2),
-   headshot 3u wide by 4.5u tall (2:3), paragraph gap one line.
+   headshot 2.5u wide by 3.75u tall (2:3), paragraph gap one line.
    Fonts live in fonts.css, embedded so text never flashes. */
 
 
@@ -35,7 +35,7 @@ a.quiet:hover{text-decoration:underline;text-decoration-thickness:1px;text-decor
 a.society{font-weight:520}
 
 /* Headshot, set like a frontispiece with an engraver's plate mark */
-.portrait{display:block;width:calc(var(--u)*3);height:auto;aspect-ratio:2/3;
+.portrait{display:block;width:calc(var(--u)*2.5);height:auto;aspect-ratio:2/3;
   margin:0 0 1.55em}
 
 /* Flags */
@@ -50,8 +50,10 @@ span[lang="zh-Hans"]{font-size:.97em;line-height:1}
 .home{display:inline-block;color:var(--muted);margin-bottom:1.55em;line-height:0}
 .home svg{width:2.2em;height:1.1em;fill:currentColor}
 
-/* Footer and colophon */
-footer{margin-top:calc(var(--u)*1.5);color:var(--muted);font-size:.8em;line-height:1.6}
+/* Footer and colophon: pushed to the foot of the page */
+main.essay{min-height:100vh;min-height:100svh;display:flex;flex-direction:column;padding-bottom:calc(var(--u)*.75)}
+main.essay>*{flex:none}
+footer{margin-top:auto;padding-top:calc(var(--u)*3);color:var(--muted);font-size:.8em;line-height:1.6}
 footer p+p{margin-top:0}
 footer .sc{font-variant-caps:all-small-caps;letter-spacing:.1em}
 
@@ -86,6 +88,7 @@ figure img{display:block;max-width:100%;height:auto;mix-blend-mode:multiply}
   :root{--u:.6in}
   a{color:#000;text-decoration-color:#999}
   .portrait{width:1.4in}
-  footer{margin-top:.3in}
+  main.essay{min-height:0;display:block}
+  footer{margin-top:.3in;padding-top:0}
   pre{white-space:pre-wrap;font-size:8pt}
 }
