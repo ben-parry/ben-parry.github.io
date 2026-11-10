@@ -1,214 +1,94 @@
-/* Fonts */
-@font-face { font-family: "Outfit"; src: url("https://benparry.ca/templates/fonts/outfit.ttf") format("truetype"); }
-@font-face { font-family: "PT Serif"; src: url("https://benparry.ca/templates/fonts/pt-serif.ttf") format("truetype"); }
+/* benparry.ca
+   One ratio governs the page: 2:3.
+   u = measure / 9 (Van de Graaf canon). Top margin 1.5u, bottom 3u (1:2),
+   headshot 3u wide by 4.5u tall (2:3), plate mark u/12, indent u/2.
+   Fonts live in fonts.css, embedded so text never flashes. */
 
-h2 {
-    font-family: "Outfit", sans-serif;
+
+:root{
+  --paper:#F6EFE2; --ink:#2B2522; --muted:#6F635B; --rubric:#A42A1E;
+  --measure:30em; --u:calc(var(--measure)/9);
+}
+*{box-sizing:border-box}
+html{font-size:19px;-webkit-text-size-adjust:100%;text-size-adjust:100%;background:var(--paper)}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font:430 1rem/1.55 "Newsreader","Noto Serif SC",Georgia,serif;
+  font-optical-sizing:auto;font-kerning:normal;font-synthesis:none;
+  text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased;hanging-punctuation:first}
+main,.page{width:min(var(--measure),100% - var(--u));margin:0 auto;padding:calc(var(--u)*1.5) 0 calc(var(--u)*3)}
+::selection{background:rgba(164,42,30,.16)}
+
+/* Book paragraphs: no gap, indented after the first */
+p{margin:0}
+p+p{text-indent:calc(var(--u)/2)}
+.flush{text-indent:0!important}
+
+/* Links: semibold rubric, light underline, no hover change */
+a{color:var(--rubric);font-weight:600;text-decoration:underline;text-decoration-thickness:1px;
+  text-underline-offset:.12em;text-decoration-skip-ink:auto}
+a:focus-visible{outline:1px dotted currentColor;outline-offset:2px}
+a.quiet{color:inherit;font-weight:inherit;text-decoration:none}
+a.quiet:hover{text-decoration:underline;text-decoration-thickness:1px;text-decoration-color:rgba(43,37,34,.35)}
+
+/* Small caps drawn from capitals: Newsreader has no true small caps */
+.sc{text-transform:uppercase;font-size:.8em;letter-spacing:.06em;font-weight:500}
+a .sc{font-weight:500;letter-spacing:.05em}
+a:has(.sc){text-decoration-thickness:1px;text-underline-offset:.16em;text-decoration-color:rgba(164,42,30,.45)}
+.motto{text-align:center;text-indent:0!important;margin:.5em 0}
+.motto+p{text-indent:0}
+
+/* Headshot, set like a frontispiece with an engraver's plate mark */
+.portrait{display:block;width:calc(var(--u)*3);height:auto;aspect-ratio:2/3;
+  padding:calc(var(--u)/12);border:1px solid rgba(43,37,34,.3);margin:0 0 1.55em;background:var(--paper)}
+
+/* Flags */
+.flag{display:inline-block;line-height:0;width:1.05em;height:.7em;vertical-align:-.04em;margin:0 .05em}
+
+/* Chinese: Song face, two-character indent */
+[lang="zh-Hans"]{font-family:"Noto Serif SC",serif;font-weight:400}
+p[lang="zh-Hans"]{font-size:.9em;line-height:calc(1.55em/.9);text-indent:2em;letter-spacing:.02em}
+span[lang="zh-Hans"]{font-size:.92em;line-height:1}
+
+/* Manicule back home */
+.home{display:inline-block;color:var(--muted);margin-bottom:1.55em;line-height:0}
+.home svg{width:2.2em;height:1.1em;fill:currentColor}
+
+/* Footer and colophon */
+footer{margin-top:calc(var(--u)*1.5);color:var(--muted);font-size:.8em;line-height:1.6}
+footer p+p{text-indent:0}
+footer .sc{letter-spacing:.12em}
+
+/* Lists and marks on sub-pages */
+ul{margin:.775em 0;padding-left:calc(var(--u)/2)}
+li{padding-left:.2em}
+mark{background:rgba(164,42,30,.12);color:inherit;padding:0 .08em;border-radius:1px}
+sup{line-height:0}
+p+ul,ul+p{text-indent:0}
+
+/* Notebooks */
+pre{font:13px/1.5 ui-monospace,"SF Mono",Menlo,Consolas,monospace;background:rgba(43,37,34,.045);
+  border-left:2px solid rgba(43,37,34,.18);padding:.8em 1em;margin:1.55em 0;overflow-x:auto;white-space:pre}
+pre.out{background:none;border-left-color:rgba(164,42,30,.35)}
+figure{margin:1.55em 0}
+figure img{display:block;max-width:100%;height:auto;mix-blend-mode:multiply}
+
+.quote{text-indent:0}
+.quote+p{text-indent:0;color:var(--muted);margin-top:.5em}
+
+@media (max-width:600px){
+  html{font-size:17.5px}
+  :root{--u:calc(min(var(--measure),100vw)/9)}
+  main,.page{width:calc(100% - var(--u));padding-top:var(--u)}
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "PT Serif", serif;
-    font-size: 16px;
-    background-color: #FFFAF3;
-    color: #322d2e;
-    line-height: 1.5;
-}
-
-.container {
-    display: flex;
-    min-height: 100vh;
-    justify-content: center;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.column {
-    padding: 30px 20px;
-    box-sizing: border-box;
-}
-
-.left {
-    width: 20%;
-}
-
-.middle {
-    width: 60%;
-    max-width: 800px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-}
-
-.right {
-    width: 15%;
-}
-
-/* Menu styles */
-#menu {
-    font-family: "Outfit", sans-serif;
-    font-size: 14px;
-    position: sticky;
-    top: 30px; /* Adjust this value as needed */
-}
-
-#menu nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-#menu nav li {
-    margin-bottom: 10px;
-}
-
-#menu a {
-    font-style: normal;
-}
-
-#lists a {
-    font-style: normal;
-}
-
-a {
-    color: #294635;
-    text-decoration: none;
-    font-weight: 400;
-    font-style: italic;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.headshot {
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-}
-
-
-/* Highlight styles */
-.content mark {
-    background-color: rgba(205, 92, 103, 0.2); /* Using a shade of your link color (CD5C67) with transparency */
-    color: #322d2e; /* Keeping the text color consistent */
-    padding: 0.05em 0.1em; /* Reduced padding for tighter fit */
-    border-radius: 2px; /* Slightly rounded corners */
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
-    text-shadow: none;
-    transition: background-color 0.3s ease;
-}
-
-.content mark:hover {
-    background-color: rgba(205, 92, 103, 0.4); /* Darker on hover for better visibility */
-}
-.chinese {
-    font-family: "Noto Sans SC", sans-serif;
-}
-
-/* Blog styles */
-.blog-table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-.blog-row {
-    border-bottom: 1px solid #e0dcd7;
-}
-
-.blog-row:last-child {
-    border-bottom: none;
-}
-
-.blog-title {
-    padding: 12px 0;
-    font-family: "PT Serif", serif;
-}
-
-.blog-title a {
-    font-style: normal;
-}
-
-.blog-date {
-    padding: 12px 0;
-    text-align: right;
-    color: #888;
-    font-family: "Outfit", sans-serif;
-    font-size: 14px;
-    white-space: nowrap;
-}
-
-.loading-text {
-    color: #888;
-    font-style: italic;
-}
-
-/* Blog post page styles */
-.blog-post-header {
-    margin-bottom: 2em;
-    padding-bottom: 1em;
-    border-bottom: 1px solid #e0dcd7;
-}
-
-.blog-post-header h2 {
-    margin-bottom: 0.25em;
-}
-
-.blog-post-date {
-    color: #888;
-    font-family: "Outfit", sans-serif;
-    font-size: 14px;
-    margin: 0;
-}
-
-.blog-post-content {
-    line-height: 1.7;
-}
-
-.blog-post-content img {
-    max-width: 100%;
-    height: auto;
-}
-
-.blog-post-content blockquote {
-    border-left: 2px solid #e0dcd7;
-    margin-left: 0;
-    padding-left: 1.5em;
-    color: #555;
-    font-style: italic;
-}
-
-.blog-post-footer {
-    margin-top: 3em;
-    padding-top: 1em;
-    border-top: 1px solid #e0dcd7;
-}
-
-.blog-post-footer a {
-    font-family: "Outfit", sans-serif;
-    font-size: 14px;
-}
-
-/* Media query for mobile devices */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-    }
-    
-    .column {
-        width: 100%;
-    }
-    
-    .middle {
-        width: 100%;
-        max-width: none;
-    }
-
-    #menu {
-        position: static;
-    }
+@media print{
+  @page{size:letter;margin:.75in}
+  html{font-size:11pt;background:#fff}
+  body{background:#fff;color:#000}
+  main,.page{width:auto;padding:0}
+  :root{--u:.6in}
+  a{color:#000;text-decoration-color:#999}
+  .portrait{width:1.4in;border-color:#999}
+  footer{margin-top:.3in}
+  pre{white-space:pre-wrap;font-size:8pt}
 }
